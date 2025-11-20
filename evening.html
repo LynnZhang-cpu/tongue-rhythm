@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Evening Rhythm Score · Tongue–Rhythm · The Source One Health</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Evening Rhythm Score (Part 2) of the Tongue–Rhythm method at The Source One Health." />
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #fef3c7 0%, #fee2e2 50%, #fee2f2 100%);
+      color: #0f172a;
+    }
+    .brand-header {
+      text-align: center;
+      padding: 18px 12px;
+      background: linear-gradient(135deg, #f9fafb, #fee2e2);
+      border-bottom: 2px solid #fecaca;
+    }
+    .brand-header h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      color: #7f1d1d;
+    }
+    .brand-header p {
+      margin: 4px 0;
+    }
+    .brand-header .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: #b91c1c;
+    }
+    .brand-header .tagline {
+      font-size: 12px;
+      color: #9f1239;
+      font-style: italic;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 12px 28px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(127, 29, 29, 0.16);
+      padding: 16px 14px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #7f1d1d;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: #fef2f2;
+      color: #b91c1c;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .impact-text p {
+      margin: 4px 0;
+      font-size: 13px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #7f1d1d;
+      margin: 4px 0 6px;
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .score-display {
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #fef3c7, #fecaca);
+      margin-bottom: 10px;
+    }
+    .score-display .total {
+      font-size: 40px;
+      font-weight: 800;
+      color: #b91c1c;
+      margin: 0;
+    }
+    .score-display .label {
+      font-size: 11px;
+      color: #7c2d12;
+      font-weight: 600;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .badge-good {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .badge-ok {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .badge-low {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .option {
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      font-size: 12px;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .option.selected {
+      border-color: #b91c1c;
+      background: #fef2f2;
+    }
+    .option input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #b91c1c;
+    }
+    .option-score {
+      margin-left: auto;
+      font-weight: 600;
+      color: #b91c1c;
+      font-size: 12px;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #b91c1c;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(127, 29, 29, 0.4);
+    }
+    .slider-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 32px;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: #4b5563;
+    }
+    @media (max-width: 480px) {
+      .slider-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+    .slider-value {
+      text-align: right;
+      font-size: 13px;
+      font-weight: 600;
+      color: #b91c1c;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: 9px 11px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      resize: vertical;
+      min-height: 60px;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #b91c1c;
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.3);
+    }
+    .btn-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .footer-cta {
+      padding: 26px 18px 30px;
+      background: #fef2f2;
+      text-align: center;
+      border-top: 2px solid #fecaca;
+      margin-top: 28px;
+    }
+    .footer-cta h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #7f1d1d;
+    }
+    .footer-cta p {
+      margin: 4px 0;
+      font-size: 13px;
+      color: #7c2d12;
+      line-height: 1.6;
+    }
+    .footer-cta .small {
+      font-size: 11px;
+      color: #9f1239;
+    }
+    .footer-cta img {
+      width: 160px;
+      margin: 18px auto 12px;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(127, 29, 29, 0.18);
+    }
+    .footer-cta a.cta-btn {
+      display: inline-block;
+      background: #7f1d1d;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .save-indicator {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(127, 29, 29, 0.9);
+      color: #ffffff;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .save-indicator.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Brand header -->
+  <div class="brand-header">
+    <h2>Tongue – Rhythm</h2>
+    <p class="subtitle">at The Source One Health</p>
+    <p class="tagline">Tongue speaks. Rhythm begins.</p>
+  </div>
+
+  <div class="container">
+    <!-- Title + impact text -->
+    <div class="card">
+      <span class="pill">Part 2 · Evening Rhythm Score</span>
+      <h1>Evening Rhythm Score</h1>
+      <div class="impact-text">
+        <p><strong>Your tongue is the mirror of your body.</strong></p>
+        <p>It shows how your inner rhythm — sleep, digestion, stress, energy — is expressing itself today.</p>
+        <p><strong>Morning tongue observation + evening rhythm score</strong> gives you a clear, honest picture of:</p>
+        <p>• how your body is responding,<br/>
+           • where your rhythm is steady or disrupted,<br/>
+           • and what gentle shifts can restore balance and vitality.</p>
+        <p><strong>Tongue speaks. Rhythm begins.</strong></p>
+        <p>This is not a medical test — it’s a simple awareness practice that helps you read your body’s signals and guide your self-care with clarity.</p>
+      </div>
+    </div>
+
+    <!-- Part 2 explanation -->
+    <div class="card">
+      <h2 class="section-title">How this evening sheet works</h2>
+      <p style="font-size:12px; color:#4b5563; line-height:1.6;">
+        This is Part 2 of the Tongue–Rhythm method. Morning is for gentle tongue and rhythm observation;
+        evening is for scoring how you ate, drank, digested, slept and felt today.
+      </p>
+      <p class="note">
+        If you haven’t used the morning sheet yet, you can start tomorrow with the Morning Tongue Rhythm Sheet.
+      </p>
+      <a class="btn-link" href="https://lynnzhang-cpu.github.io/tongue-rhythm/morning.html">
+        Go to Morning Tongue Rhythm Sheet →
+      </a>
+    </div>
+
+    <!-- Score display -->
+    <div class="card">
+      <h2 class="section-title">1 · Your rhythm score today</h2>
+      <div class="score-display">
+        <p class="label">Total rhythm score (0–100)</p>
+        <p class="total" id="totalScore">0</p>
+        <span class="badge" id="scoreBadge"></span>
+      </div>
+      <p class="note">
+        This score is for awareness, not judgment. Low scores simply show you where small lifestyle shifts may support your rhythm.
+      </p>
+    </div>
+
+    <!-- Sections: Eat, Drink, Digest, Urine, Sleep, Mood -->
+    <div class="card">
+      <h2 class="section-title">2 · Eating today (0–20)</h2>
+
+      <label class="label">Appetite</label>
+      <label class="option">
+        <input type="radio" name="eat_appetite" value="8" />
+        Normal or slightly strong appetite
+        <span class="option-score">+8</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="eat_appetite" value="4" />
+        A little low or up-and-down
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="eat_appetite" value="0" />
+        Very low appetite most of the day
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="label" style="margin-top:10px;">After-meal comfort</label>
+      <label class="option">
+        <input type="radio" name="eat_comfort" value="8" />
+        Mostly comfortable, no strong bloating or reflux
+        <span class="option-score">+8</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="eat_comfort" value="4" />
+        Occasional mild bloating / heaviness
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="eat_comfort" value="0" />
+        Frequent or strong discomfort after meals
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="option" style="margin-top:8px;">
+        <input type="checkbox" id="eat_bonus" />
+        I kept dinner light (about 70% full) and avoided late heavy snacks
+        <span class="option-score">+4</span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">3 · Drinking & hydration (0–15)</h2>
+
+      <label class="label">Total water intake</label>
+      <label class="option">
+        <input type="radio" name="drink_amount" value="8" />
+        About 1–1.5 litres or more
+        <span class="option-score">+8</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="drink_amount" value="4" />
+        Around 0.5–1 litre
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="drink_amount" value="0" />
+        Less than 0.5 litre
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="label" style="margin-top:10px;">Main type of drink</label>
+      <label class="option">
+        <input type="radio" name="drink_type" value="7" />
+        Mostly warm / room-temperature water or herbal tea
+        <span class="option-score">+7</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="drink_type" value="3" />
+        Mix of water and sweet / fizzy drinks
+        <span class="option-score">+3</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="drink_type" value="0" />
+        Mostly iced / very cold drinks
+        <span class="option-score">+0</span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">4 · Digestion & bowel movement (0–20)</h2>
+
+      <label class="label">Bowel movement</label>
+      <label class="option">
+        <input type="radio" name="bowel_freq" value="8" />
+        Once today (or usually once a day)
+        <span class="option-score">+8</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="bowel_freq" value="4" />
+        Skipped today but usually regular
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="bowel_freq" value="0" />
+        Two or more days without a bowel movement
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="label" style="margin-top:10px;">Stool form</label>
+      <label class="option">
+        <input type="radio" name="bowel_form" value="8" />
+        Soft, formed, easy to pass
+        <span class="option-score">+8</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="bowel_form" value="4" />
+        Sometimes loose or sometimes hard
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="bowel_form" value="0" />
+        Mostly very loose or very hard pellets
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="option" style="margin-top:8px;">
+        <input type="checkbox" id="bowel_comfort" />
+        I felt mostly complete and clean after going
+        <span class="option-score">+4</span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">5 · Urine & hydration signals (0–10)</h2>
+
+      <label class="label">Night-time urination</label>
+      <label class="option">
+        <input type="radio" name="urine_night" value="4" />
+        0–1 times
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="urine_night" value="1" />
+        2 or more times
+        <span class="option-score">+1</span>
+      </label>
+
+      <label class="label" style="margin-top:10px;">Colour & clarity</label>
+      <label class="option">
+        <input type="radio" name="urine_color" value="4" />
+        Light yellow and fairly clear
+        <span class="option-score">+4</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="urine_color" value="1" />
+        Very dark yellow or often cloudy
+        <span class="option-score">+1</span>
+      </label>
+
+      <label class="option" style="margin-top:8px;">
+        <input type="checkbox" id="urine_discomfort" />
+        I noticed stingy sensations or strong smell today
+        <span class="option-score">-2</span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">6 · Sleep rhythm (0–20)</h2>
+
+      <label class="label">Bedtime</label>
+      <label class="option">
+        <input type="radio" name="sleep_time" value="10" />
+        Before or around 11:00 pm
+        <span class="option-score">+10</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="sleep_time" value="6" />
+        Between 11:00 pm and midnight
+        <span class="option-score">+6</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="sleep_time" value="0" />
+        After midnight
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="label" style="margin-top:10px;">Sleep quality</label>
+      <label class="option">
+        <input type="radio" name="sleep_quality" value="6" />
+        Fell asleep fairly easily, mostly stayed asleep
+        <span class="option-score">+6</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="sleep_quality" value="3" />
+        Took a while to fall asleep or woke a few times
+        <span class="option-score">+3</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="sleep_quality" value="0" />
+        Very broken sleep or strong difficulty sleeping
+        <span class="option-score">+0</span>
+      </label>
+
+      <label class="option" style="margin-top:8px;">
+        <input type="checkbox" id="sleep_winddown" />
+        I had some kind of wind-down (screen off / light stretch / warm shower)
+        <span class="option-score">+4</span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">7 · Emotional & energy rhythm (0–15)</h2>
+      <div class="slider-row">
+        <span>Emotional steadiness (0–5)</span>
+        <input type="range" id="mood" min="0" max="5" value="3" />
+        <span class="slider-value" id="moodVal">3</span>
+      </div>
+      <div class="slider-row">
+        <span>Overall energy (0–5)</span>
+        <input type="range" id="energy" min="0" max="5" value="3" />
+        <span class="slider-value" id="energyVal">3</span>
+      </div>
+      <div class="slider-row">
+        <span>Stress load (0–5, reversed)</span>
+        <input type="range" id="stress" min="0" max="5" value="2" />
+        <span class="slider-value" id="stressVal">2</span>
+      </div>
+      <p class="note">
+        Use your own sense of the numbers. Higher emotional steadiness and energy generally support rhythm;
+        lower stress also supports rhythm.
+      </p>
+    </div>
+
+    <!-- Notes -->
+    <div class="card">
+      <h2 class="section-title">8 · Notes for yourself</h2>
+      <label class="label" for="note_body">One connection I see between my day and my body</label>
+      <textarea id="note_body" placeholder="For example: 'Heavier dinner, lower energy and more coating on the tongue'"></textarea>
+
+      <label class="label" for="note_shift" style="margin-top:8px;">One small rhythm shift I’d like to try next</label>
+      <textarea id="note_shift" placeholder="For example: 'Lights out 30 minutes earlier' or 'Warm drink instead of iced'"></textarea>
+    </div>
+
+    <!-- Footer CTA with QR -->
+    <div class="footer-cta">
+      <h3>When you're ready for personalised rhythm guidance</h3>
+      <p>
+        You can book a Tongue–Rhythm lifestyle consultation<br />
+        at <strong>The Source One Health</strong> in Australia.
+      </p>
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.thesourceonehealth.com%2Fhome"
+        alt="Scan to book at The Source One Health"
+      />
+
+      <a class="cta-btn" href="https://www.thesourceonehealth.com/home">
+        Book Your Rhythm Session →
+      </a>
+
+      <p class="small">
+        Tongue – Rhythm · The Source One Health<br />
+        Tongue speaks. Rhythm begins.
+      </p>
+    </div>
+  </div>
+
+<div class="save-indicator" id="saveIndicator">
+    Saved to this device · your rhythm stays with you
+</div>
+
+  <script>
+    const STORAGE_KEY = "tongue_rhythm_evening_v1";
+    const saveIndicator = document.getElementById("saveIndicator");
+    let saveTimer;
+
+    function showSaved() {
+      saveIndicator.classList.add("show");
+      if (saveTimer) clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => saveIndicator.classList.remove("show"), 1500);
+    }
+
+    function getRadioValue(name) {
+      const checked = document.querySelector('input[name="' + name + '"]:checked');
+      return checked ? Number(checked.value) : 0;
+    }
+
+    function setRadioValue(name, value) {
+      const radios = document.querySelectorAll('input[name="' + name + '"]');
+      radios.forEach((r) => {
+        if (Number(r.value) === value) {
+          r.checked = true;
+          r.parentElement.classList.add("selected");
+        }
+      });
+    }
+
+    function calculateScore() {
+      let score = 0;
+
+      // Eating
+      score += getRadioValue("eat_appetite");
+      score += getRadioValue("eat_comfort");
+      if (document.getElementById("eat_bonus").checked) score += 4;
+
+      // Drinking
+      score += getRadioValue("drink_amount");
+      score += getRadioValue("drink_type");
+
+      // Digestion
+      score += getRadioValue("bowel_freq");
+      score += getRadioValue("bowel_form");
+      if (document.getElementById("bowel_comfort").checked) score += 4;
+
+      // Urine
+      score += getRadioValue("urine_night");
+      score += getRadioValue("urine_color");
+      if (document.getElementById("urine_discomfort").checked) score -= 2;
+
+      // Sleep
+      score += getRadioValue("sleep_time");
+      score += getRadioValue("sleep_quality");
+      if (document.getElementById("sleep_winddown").checked) score += 4;
+
+      // Mood / energy / stress
+      const mood = Number(document.getElementById("mood").value);      // 0–5
+      const energy = Number(document.getElementById("energy").value);  // 0–5
+      const stress = Number(document.getElementById("stress").value);  // 0–5 (higher = more stress)
+
+      score += mood * 1.5;          // max 7.5
+      score += energy * 1.5;        // max 7.5
+      score += (5 - stress) * 1.5;  // reversed, max 7.5
+
+      if (score < 0) score = 0;
+      if (score > 100) score = 100;
+
+      document.getElementById("totalScore").textContent = Math.round(score);
+
+      const badge = document.getElementById("scoreBadge");
+      const s = Math.round(score);
+      if (s >= 75) {
+        badge.textContent = "Rhythm fairly steady today";
+        badge.className = "badge badge-good";
+      } else if (s >= 55) {
+        badge.textContent = "Rhythm workable · notice small shifts";
+        badge.className = "badge badge-ok";
+      } else {
+        badge.textContent = "Rhythm under strain · gentle changes can help";
+        badge.className = "badge badge-low";
+      }
+    }
+
+    function saveData() {
+      const data = {};
+
+      // Radios
+      [
+        "eat_appetite",
+        "eat_comfort",
+        "drink_amount",
+        "drink_type",
+        "bowel_freq",
+        "bowel_form",
+        "urine_night",
+        "urine_color",
+        "sleep_time",
+        "sleep_quality"
+      ].forEach((name) => {
+        const val = getRadioValue(name);
+        data[name] = val;
+      });
+
+      // Checkboxes
+      [
+        "eat_bonus",
+        "bowel_comfort",
+        "urine_discomfort",
+        "sleep_winddown"
+      ].forEach((id) => {
+        const el = document.getElementById(id);
+        data[id] = el ? el.checked : false;
+      });
+
+      // Sliders
+      ["mood", "energy", "stress"].forEach((id) => {
+        const el = document.getElementById(id);
+        data[id] = el ? Number(el.value) : 0;
+      });
+
+      // Notes
+      ["note_body", "note_shift"].forEach((id) => {
+        const el = document.getElementById(id);
+        data[id] = el ? el.value : "";
+      });
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      showSaved();
+    }
+
+    function loadData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        calculateScore();
+        return;
+      }
+      try {
+        const data = JSON.parse(raw);
+
+        // Radios
+        [
+          "eat_appetite",
+          "eat_comfort",
+          "drink_amount",
+          "drink_type",
+          "bowel_freq",
+          "bowel_form",
+          "urine_night",
+          "urine_color",
+          "sleep_time",
+          "sleep_quality"
+        ].forEach((name) => {
+          if (data[name] !== undefined) setRadioValue(name, Number(data[name]));
+        });
+
+        // Checkboxes
+        [
+          "eat_bonus",
+          "bowel_comfort",
+          "urine_discomfort",
+          "sleep_winddown"
+        ].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && data[id] !== undefined) el.checked = data[id];
+        });
+
+        // Sliders
+        ["mood", "energy", "stress"].forEach((id) => {
+          const el = document.getElementById(id);
+          const valEl = document.getElementById(id + "Val");
+          if (el && data[id] !== undefined) {
+            el.value = data[id];
+            if (valEl) valEl.textContent = data[id];
+          }
+        });
+
+        // Notes
+        ["note_body", "note_shift"].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && data[id] !== undefined) el.value = data[id];
+        });
+
+        calculateScore();
+      } catch (e) {
+        console.warn("Could not load evening data", e);
+        calculateScore();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Highlight selected options when radios are chosen
+      document.querySelectorAll(".option input[type='radio']").forEach((input) => {
+        input.addEventListener("change", () => {
+          const name = input.name;
+          document
+            .querySelectorAll('input[name="' + name + '"]')
+            .forEach((r) => r.parentElement.classList.remove("selected"));
+          input.parentElement.classList.add("selected");
+          calculateScore();
+          saveData();
+        });
+      });
+
+      // Checkboxes
+      ["eat_bonus", "bowel_comfort", "urine_discomfort", "sleep_winddown"].forEach(
+        (id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.addEventListener("change", () => {
+              calculateScore();
+              saveData();
+            });
+          }
+        }
+      );
+
+      // Sliders
+      ["mood", "energy", "stress"].forEach((id) => {
+        const el = document.getElementById(id);
+        const valEl = document.getElementById(id + "Val");
+        if (el) {
+          el.addEventListener("input", () => {
+            if (valEl) valEl.textContent = el.value;
+            calculateScore();
+            saveData();
+          });
+        }
+      });
+
+      // Notes
+      ["note_body", "note_shift"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", saveData);
+      });
+
+      loadData();
+    });
+  </script>
+</body>
+</html>
