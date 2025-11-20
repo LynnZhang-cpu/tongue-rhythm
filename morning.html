@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Morning Tongue Rhythm Sheet · Tongue–Rhythm · The Source One Health</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Morning Tongue Rhythm Sheet (Part 1) of the Tongue–Rhythm method at The Source One Health." />
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+      color: #0f172a;
+    }
+    .brand-header {
+      text-align: center;
+      padding: 18px 12px;
+      background: linear-gradient(135deg, #f9fafb, #eef2ff);
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .brand-header h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .brand-header p {
+      margin: 4px 0;
+    }
+    .brand-header .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .brand-header .tagline {
+      font-size: 12px;
+      color: #64748b;
+      font-style: italic;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 12px 28px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      padding: 16px 14px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .impact-text p {
+      margin: 4px 0;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 4px 0 6px;
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+      display: block;
+    }
+    input[type="text"],
+    input[type="time"],
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      padding: 10px 12px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    input[type="text"]:focus,
+    input[type="time"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 640px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .tag.active {
+      background: #dbeafe;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+    .slider-group {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .slider-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 32px;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 480px) {
+      .slider-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+    .slider-label {
+      font-size: 12px;
+      color: #475569;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #3b82f6;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.35);
+    }
+    .slider-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1d4ed8;
+      text-align: right;
+    }
+    .note {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    .btn-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #1f2937;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .footer-cta {
+      padding: 26px 18px 30px;
+      background: #f1f5f9;
+      text-align: center;
+      border-top: 2px solid #cbd5e1;
+      margin-top: 28px;
+    }
+    .footer-cta h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .footer-cta p {
+      margin: 4px 0;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .footer-cta .small {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .footer-cta img {
+      width: 160px;
+      margin: 18px auto 12px;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+    .footer-cta a.cta-btn {
+      display: inline-block;
+      background: #111827;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .save-indicator {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      color: #ffffff;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .save-indicator.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Brand header -->
+  <div class="brand-header">
+    <h2>Tongue – Rhythm</h2>
+    <p class="subtitle">at The Source One Health</p>
+    <p class="tagline">Tongue speaks. Rhythm begins.</p>
+  </div>
+
+  <div class="container">
+    <!-- Title + impact text -->
+    <div class="card">
+      <span class="pill">Part 1 · Morning Tongue Rhythm Sheet</span>
+      <h1>Morning Tongue Rhythm Sheet</h1>
+      <div class="impact-text">
+        <p><strong>Your tongue is the mirror of your body.</strong></p>
+        <p>It shows how your inner rhythm — sleep, digestion, stress, energy — is expressing itself today.</p>
+        <p><strong>Morning tongue observation + evening rhythm score</strong> gives you a clear, honest picture of:</p>
+        <p>• how your body is responding,<br/>
+           • where your rhythm is steady or disrupted,<br/>
+           • and what gentle shifts can restore balance and vitality.</p>
+        <p><strong>Tongue speaks. Rhythm begins.</strong></p>
+        <p>This is not a medical test — it’s a simple awareness practice that helps you read your body’s signals and guide your self-care with clarity.</p>
+      </div>
+    </div>
+
+    <!-- Part 1 explanation + link to evening sheet -->
+    <div class="card">
+      <h2 class="section-title">How this morning sheet works</h2>
+      <p style="font-size:12px; color:#475569; line-height:1.6;">
+        This is Part 1 of the Tongue–Rhythm method. In the morning, you gently observe your tongue and basic rhythm.
+        In the evening, you complete the Evening Rhythm Score. Together they create a simple daily rhythm awareness practice.
+      </p>
+      <p class="note">
+        For best results, try this for 3 days in a row. No need to change anything big at first — simply record and observe.
+      </p>
+      <a class="btn-link" href="https://lynnzhang-cpu.github.io/tongue-rhythm/evening.html">
+        Next: Evening Rhythm Score →
+      </a>
+    </div>
+
+    <!-- Basic info -->
+    <div class="card">
+      <h2 class="section-title">1 · Basic rhythm</h2>
+      <div class="row">
+        <div>
+          <label class="label" for="date">Date</label>
+          <input type="text" id="date" placeholder="YYYY-MM-DD" />
+        </div>
+        <div>
+          <label class="label" for="wakeTime">Wake-up time</label>
+          <input type="time" id="wakeTime" />
+        </div>
+        <div>
+          <label class="label" for="sleepTime">Last night’s sleep time</label>
+          <input type="time" id="sleepTime" />
+        </div>
+      </div>
+      <p class="note">You don’t need a “perfect” morning. Just record what is real for today.</p>
+    </div>
+
+    <!-- Tongue observation -->
+    <div class="card">
+      <h2 class="section-title">2 · Morning tongue observation</h2>
+      <p class="note">
+        Observe in natural light if possible. Relax your tongue, no filters or beauty effects.
+      </p>
+
+      <label class="label">Tongue colour</label>
+      <div class="tag-group" data-field="tongueColor">
+        <span class="tag">Pale</span>
+        <span class="tag">Normal pink</span>
+        <span class="tag">Red tip</span>
+        <span class="tag">Red overall</span>
+        <span class="tag">Dark / purplish</span>
+      </div>
+
+      <label class="label" style="margin-top:10px;">Tongue shape</label>
+      <div class="tag-group" data-field="tongueShape">
+        <span class="tag">Teeth marks</span>
+        <span class="tag">Swollen</span>
+        <span class="tag">Thin</span>
+        <span class="tag">Cracks</span>
+        <span class="tag">Smooth</span>
+      </div>
+
+      <label class="label" style="margin-top:10px;">Coating thickness</label>
+      <div class="tag-group" data-field="coatThickness">
+        <span class="tag">Thin</span>
+        <span class="tag">Medium</span>
+        <span class="tag">Thick</span>
+      </div>
+
+      <label class="label" style="margin-top:10px;">Coating colour / quality</label>
+      <div class="tag-group" data-field="coatQuality">
+        <span class="tag">White</span>
+        <span class="tag">Yellow</span>
+        <span class="tag">Greasy</span>
+        <span class="tag">Dry</span>
+        <span class="tag">Moist</span>
+      </div>
+
+      <label class="label" for="tongueNote" style="margin-top:10px;">Notes (optional)</label>
+      <textarea id="tongueNote" placeholder="Anything that stands out? e.g. 'red tip, thicker coating in the back'"></textarea>
+    </div>
+
+    <!-- Rhythm actions -->
+    <div class="card">
+      <h2 class="section-title">3 · Today’s rhythm actions (choose 0–3)</h2>
+      <p class="note">Small, gentle actions are enough. This is about rhythm, not perfection.</p>
+      <div class="tag-group" data-field="actions">
+        <span class="tag">Warm water on waking</span>
+        <span class="tag">Morning sunlight</span>
+        <span class="tag">Light walk at midday</span>
+        <span class="tag">Early dinner</span>
+        <span class="tag">No heavy late-night snacks</span>
+        <span class="tag">Screens off 45 min before bed</span>
+        <span class="tag">Foot soak / warm wind-down</span>
+      </div>
+    </div>
+
+    <!-- Sliders: mood / energy / digestion -->
+    <div class="card">
+      <h2 class="section-title">4 · How you feel in your body (0–5)</h2>
+      <div class="slider-group">
+        <div class="slider-row">
+          <div class="slider-label">Emotional steadiness</div>
+          <input type="range" id="mood" min="0" max="5" value="3" />
+          <div class="slider-value" id="moodVal">3</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label">Energy level</div>
+          <input type="range" id="energy" min="0" max="5" value="3" />
+          <div class="slider-value" id="energyVal">3</div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label">Digestive comfort</div>
+          <input type="range" id="digestion" min="0" max="5" value="3" />
+          <div class="slider-value" id="digestionVal">3</div>
+        </div>
+      </div>
+      <p class="note">Use your own sense of “0–5”. There is no right or wrong — this is your rhythm, not a test.</p>
+    </div>
+
+    <!-- Reflection -->
+    <div class="card">
+      <h2 class="section-title">5 · Gentle reflection</h2>
+      <label class="label" for="noticed">One thing I noticed about my tongue or rhythm this morning</label>
+      <textarea id="noticed" placeholder="For example: 'Thicker coating after a late night' or 'Calmer tongue after better sleep'"></textarea>
+
+      <label class="label" for="keep" style="margin-top:8px;">One rhythm habit I’d like to keep or try today</label>
+      <textarea id="keep" placeholder="For example: 'Lights out by 11pm' or 'Warm water instead of iced drinks'"></textarea>
+    </div>
+
+    <!-- Footer CTA with QR + booking -->
+    <div class="footer-cta">
+      <h3>When you're ready for personalised rhythm guidance</h3>
+      <p>
+        You can book a Tongue–Rhythm lifestyle consultation<br />
+        at <strong>The Source One Health</strong> in Australia.
+      </p>
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.thesourceonehealth.com%2Fhome"
+        alt="Scan to book at The Source One Health"
+      />
+
+      <a class="cta-btn" href="https://www.thesourceonehealth.com/home">
+        Book Your Rhythm Session →
+      </a>
+
+      <p class="small">
+        Tongue – Rhythm · The Source One Health<br />
+        Tongue speaks. Rhythm begins.
+      </p>
+    </div>
+  </div>
+
+<div class="save-indicator" id="saveIndicator">
+    Saved to this device · your rhythm stays with you
+</div>
+
+  <script>
+    const STORAGE_KEY = "tongue_rhythm_morning_v1";
+
+    const fields = [
+      "date",
+      "wakeTime",
+      "sleepTime",
+      "tongueNote",
+      "noticed",
+      "keep"
+    ];
+
+    const tagGroups = [
+      "tongueColor",
+      "tongueShape",
+      "coatThickness",
+      "coatQuality",
+      "actions"
+    ];
+
+    const sliders = ["mood", "energy", "digestion"];
+
+    const indicator = document.getElementById("saveIndicator");
+    let saveTimer;
+
+    function showSaved() {
+      indicator.classList.add("show");
+      if (saveTimer) clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => indicator.classList.remove("show"), 1500);
+    }
+
+    function saveData() {
+      const data = {};
+
+      fields.forEach((id) => {
+        const el = document.getElementById(id);
+        data[id] = el ? el.value : "";
+      });
+
+      tagGroups.forEach((field) => {
+        const group = document.querySelector('.tag-group[data-field="' + field + '"]');
+        if (group) {
+          const actives = Array.from(group.querySelectorAll(".tag.active")).map(
+            (tag) => tag.textContent
+          );
+          data[field] = actives;
+        }
+      });
+
+      sliders.forEach((id) => {
+        const el = document.getElementById(id);
+        data[id] = el ? Number(el.value) : 0;
+      });
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      showSaved();
+    }
+
+    function loadData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      try {
+        const data = JSON.parse(raw);
+
+        fields.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && data[id] !== undefined) el.value = data[id];
+        });
+
+        tagGroups.forEach((field) => {
+          const group = document.querySelector('.tag-group[data-field="' + field + '"]');
+          if (group && Array.isArray(data[field])) {
+            group.querySelectorAll(".tag").forEach((tag) => {
+              if (data[field].includes(tag.textContent)) {
+                tag.classList.add("active");
+              }
+            });
+          }
+        });
+
+        sliders.forEach((id) => {
+          const el = document.getElementById(id);
+          const valEl = document.getElementById(id + "Val");
+          if (el && data[id] !== undefined) {
+            el.value = data[id];
+            if (valEl) valEl.textContent = data[id];
+          }
+        });
+      } catch (e) {
+        console.warn("Could not load saved morning data", e);
+      }
+    }
+
+    // Setup listeners
+    document.addEventListener("DOMContentLoaded", () => {
+      loadData();
+
+      fields.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", saveData);
+      });
+
+      sliders.forEach((id) => {
+        const el = document.getElementById(id);
+        const valEl = document.getElementById(id + "Val");
+        if (el) {
+          el.addEventListener("input", () => {
+            if (valEl) valEl.textContent = el.value;
+            saveData();
+          });
+        }
+      });
+
+      document.querySelectorAll(".tag-group").forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const tag = e.target.closest(".tag");
+          if (!tag) return;
+          tag.classList.toggle("active");
+          saveData();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
